@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SRNGA Scientific - Innovating Digital Dentistry</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1a3b6d;
+            --secondary: #2a76b4;
+            --accent: #f8b334;
+            --light: #f8f9fa;
+            --dark: #212529;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                        url('https://placehold.co/1920x1080') no-repeat center center;
+            background-size: cover;
+            height: 80vh;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-card {
+            transition: all 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: scale(1.05);
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--accent);
+            transition: width 0.3s;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .active-link {
+            color: var(--accent);
+        }
+
+        .active-link::after {
+            width: 100%;
+        }
+
+        .swiper {
+            width: 100%;
+            height: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                height: 60vh;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-md z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <img src="https://placehold.co/150x50?text=SRNGA+LOGO" alt="SRNGA Scientific Private Limited logo with company name" class="h-10">
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="nav-link text-gray-800 hover:text-blue-600 px-3 py-2 rounded-md text-md font-medium">Home</a>
+                      <div class="container">
+        <h1>Welcome to My Aesthetic Page</h1>
+        <p>This is a sample aesthetic webpage using simple HTML and CSS. You can customize colors, fonts, and layout easily to match your vibe!</p>
+        <button class="btn">About As</button>
+    </div>
+
+                        <a href="#products" class="nav-link text-gray-800 hover:text-blue-600 px-3 py-2 rounded-md text-md font-medium">Products</a>
+                        <a href="#industry" class="nav-link text-gray-800 hover:text-blue-600 px-3 py-2 rounded-md text-md font-medium">Industry</a>
+                        <a href="#analysis" class="nav-link text-gray-800 hover:text-blue-600 px-3 py-2 rounded-md text-md font-medium">Competitive Analysis</a>
+                        <a href="#contact" class="nav-link text-gray-800 hover:text-blue-600 px-3 py-2 rounded-md text-md font-medium">Contact</a>
+                    </div>
+                </div>
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile menu, show/hide based on menu state. -->
+        <div class="hidden md:hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white">
+                <a href="#home" class="nav-link text-gray-800 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="#about" class="nav-link text-gray-800 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">About Us</a>
+                <a href="#products" class="nav-link text-gray-800 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">Products</a>
+                <a href="#industry" class="nav-link text-gray-800 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">Industry</a>
+                <a href="#analysis" class="nav-link text-gray-800 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">Competitive Analysis</a>
+                <a href="#contact" class="nav-link text-gray-800 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero flex items-center justify-center text-center text-white pt-20">
+        <div class="px-4 sm:px-6 lg:px-8 max-w-3xl">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">Innovating Digital Dentistry for a Brighter Smile</h1>
+            <p class="text-xl md:text-2xl mb-8" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">Precision. Performance. Innovation.</p>
+            <a href="#contact" class="inline-block bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">Get In Touch</a>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+     
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">About SRNGA Scientific</h2>
+                <div class="w-24 h-1 bg-blue-600 mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Pioneering excellence in digital dentistry solutions for professionals worldwide.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <img src="https://placehold.co/600x400" alt="Modern dental laboratory with advanced equipment and technicians working" class="rounded-lg shadow-xl">
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Our Vision & Mission</h3>
+                    <p class="text-gray-600 mb-6">SRNGA Scientific Private Limited is committed to revolutionizing the digital dentistry landscape by manufacturing world-class dental materials and equipment that blend cutting-edge technology with affordability.</p>
+                    
+                    <div class="mb-6">
+                        <h4 class="text-xl font-semibold text-blue-600 mb-2">Our Vision</h4>
+                        <p class="text-gray-600">To emerge as a global leader in digital dentistry, setting benchmarks in quality, innovation, and customer satisfaction.</p>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-xl font-semibold text-blue-600 mb-2">Our Mission</h4>
+                        <p class="text-gray-600">To empower dental professionals with premium, affordable solutions while maintaining uncompromising standards in product quality and performance.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Our Product Portfolio</h2>
+                <div class="w-24 h-1 bg-blue-600 mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Innovative solutions designed to meet the evolving needs of modern dentistry.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Product 1 -->
+                <div class="product-card bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://placehold.co/600x400" alt="Dental Zirconia Discs in various shades and sizes arranged neatly" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Dental Zirconia Discs</h3>
+                        <p class="text-gray-600 mb-4">High-performance zirconia materials for durable, aesthetic dental restorations.</p>
+                        <a href="#contact" class="text-blue-600 font-medium hover:text-blue-800 inline-flex items-center">
+                            Learn more <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://placehold.co/600x400" alt="Advanced CBCT machine in a dental clinic setting with operator" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">CBCT Machines</h3>
+                        <p class="text-gray-600 mb-4">State-of-the-art imaging technology for precise dental diagnostics.</p>
+                        <a href="#contact" class="text-blue-600 font-medium hover:text-blue-800 inline-flex items-center">
+                            Learn more <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://placehold.co/600x400" alt="Dental tablet device showing CAD/CAM software interface with 3D tooth model" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Tablets</h3>
+                        <p class="text-gray-600 mb-4">Specialized tablets for dental CAD/CAM applications with intuitive interfaces.</p>
+                        <a href="#contact" class="text-blue-600 font-medium hover:text-blue-800 inline-flex items-center">
+                            Learn more <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://placehold.co/600x400" alt="Complete dental lab setup with milling machines, 3D printers, and workstations" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Turnkey Solutions</h3>
+                        <p class="text-gray-600 mb-4">Complete digital dentistry setups tailored to your practice needs.</p>
+                        <a href="#contact" class="text-blue-600 font-medium hover:text-blue-800 inline-flex items-center">
+                            Learn more <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industry Overview Section -->
+    <section id="industry" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Industry Overview</h2>
+                <div class="w-24 h-1 bg-blue-600 mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Understanding the global landscape of digital dentistry.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Market Insights</h3>
+                    <p class="text-gray-600 mb-6">The global market for Zirconia-based dental materials is experiencing robust growth, projected to expand significantly between 2024 and 2030. This growth is driven by increasing demand for aesthetic dental restorations and technological advancements in digital dentistry.</p>
+                    
+                    <div class="bg-blue-50 p-6 rounded-lg mb-6">
+                        <h4 class="text-xl font-semibold text-blue-600 mb-2">Key Market Drivers</h4>
+                        <ul class="list-disc list-inside text-gray-600 pl-2">
+                            <li class="mb-2">Rising prevalence of dental disorders and tooth decay</li>
+                            <li class="mb-2">Growing awareness of dental aesthetics</li>
+                            <li class="mb-2">Technological advancements in CAD/CAM systems</li>
+                            <li class="mb-2">Increasing adoption of digital workflows in dental practices</li>
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    <img src="https://placehold.co/600x400" alt="Graph showing projected growth of digital dentistry market from 2024 to 2030" class="rounded-lg shadow-xl">
+                </div>
+            </div>
+
+            <div class="mt-16">
+                <h3 class="text-2xl font-bold text-gray-800 mb-6">Challenges in Digital Dentistry</h3>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300">
+                        <div class="text-blue-600 text-4xl mb-4">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <h4 class="text-lg font-semibold text-gray-800 mb-2">High Costs</h4>
+                        <p class="text-gray-600">Initial investment in digital equipment and training can be prohibitive for small practices.</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300">
+                        <div class="text-blue-600 text-4xl mb-4">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h4 class="text-lg font-semibold text-gray-800 mb-2">Training Requirements</h4>
+                        <p class="text-gray-600">Dental professionals need specialized training to effectively use digital technologies.</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300">
+                        <div class="text-blue-600 text-4xl mb-4">
+                            <i class="fas fa-sync-alt"></i>
+                        </div>
+                        <h4 class="text-lg font-semibold text-gray-800 mb-2">Workflow Integration</h4>
+                        <p class="text-gray-600">Integrating digital workflows into traditional dental practices presents operational challenges.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Competitive Analysis Section -->
+    <section id="analysis" class="py-20 bg-blue-600 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Competitive Analysis</h2>
+                <div class="w-24 h-1 bg-yellow-500 mx-auto mb-6"></div>
+                <p class="text-xl max-w-3xl mx-auto">How SRNGA Scientific stands out in the digital dentistry landscape.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-2xl font-bold mb-6">Our Competitive Advantage</h3>
+                    <div class="mb-8">
+                        <h4 class="text-xl font-semibold mb-2 text-yellow-300">Premium Global Brands</h4>
+                        <p class="mb-6">While international brands offer high-quality products, their premium pricing and limited local support create opportunities for SRNGA to provide comparable quality at more accessible price points.</p>
+                        
+                        <h4 class="text-xl font-semibold mb-2 text-yellow-300">Low-Cost Imports</h4>
+                        <p>Competing on price alone isn't sustainable. SRNGA differentiates by combining competitive pricing with superior quality, customization options, and comprehensive after-sales service.</p>
+                    </div>
+
+                    <div class="bg-blue-700 p-6 rounded-lg">
+                        <h4 class="text-xl font-semibold mb-4">Our Unique Value Proposition</h4>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="flex items-start">
+                                <div class="text-yellow-400 mr-3 mt-1">
+                                    <i class="fas fa-check-circle text-lg"></i>
+                                </div>
+                                <p>Affordable pricing</p>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="text-yellow-400 mr-3 mt-1">
+                                    <i class="fas fa-check-circle text-lg"></i>
+                                </div>
+                                <p>Local manufacturing</p>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="text-yellow-400 mr-3 mt-1">
+                                    <i class="fas fa-check-circle text-lg"></i>
+                                </div>
+                                <p>Quick turnaround</p>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="text-yellow-400 mr-3 mt-1">
+                                    <i class="fas fa-check-circle text-lg"></i>
+                                </div>
+                                <p>Custom solutions</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="bg-white text-gray-800 rounded-lg shadow-xl p-6">
+                        <h3 class="text-2xl font-bold mb-6 text-center text-blue-800">SWOT Analysis</h3>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <!-- Strengths -->
+                            <div class="bg-green-50 p-4 rounded-lg border-l-4 border-green-500">
+                                <h4 class="font-bold text-green-700 mb-2">Strengths</h4>
+                                <ul class="list-disc list-inside text-sm pl-2">
+                                    <li class="mb-1">Local manufacturing advantages</li>
+                                    <li class="mb-1">Cost-effective solutions</li>
+                                    <li class="mb-1">Technical expertise</li>
+                                    <li class="mb-1">Customization capability</li>
+                                </ul>
+                            </div>
+                            
+                            <!-- Weaknesses -->
+                            <div class="bg-yellow-50 p-4 rounded-lg border-l-4 border-yellow-500">
+                                <h4 class="font-bold text-yellow-700 mb-2">Weaknesses</h4>
+                                <ul class="list-disc list-inside text-sm pl-2">
+                                    <li class="mb-1">Brand recognition vs global players</li>
+                                    <li class="mb-1">Limited international presence</li>
+                                    <li class="mb-1">R&D budget constraints</li>
+                                </ul>
+                            </div>
+                            
+                            <!-- Opportunities -->
+                            <div class="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500">
+                                <h4 class="font-bold text-blue-700 mb-2">Opportunities</h4>
+                                <ul class="list-disc list-inside text-sm pl-2">
+                                    <li class="mb-1">Growing middle class in emerging markets</li>
+                                    <li class="mb-1">Expanding digital dentistry adoption</li>
+                                    <li class="mb-1">Government Make in India initiatives</li>
+                                    <li class="mb-1">Export potential</li>
+                                </ul>
+                            </div>
+                            
+                            <!-- Threats -->
+                            <div class="bg-red-50 p-4 rounded-lg border-l-4 border-red-500">
+                                <h4 class="font-bold text-red-700 mb-2">Threats</h4>
+                                <ul class="list-disc list-inside text-sm pl-2">
+                                    <li class="mb-1">Price competition from imports</li>
+                                    <li class="mb-1">Technology obsolescence</li>
+                                    <li class="mb-1">Global supply chain disruptions</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Go-To-Market Strategy -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Go-To-Market Strategy</h2>
+                <div class="w-24 h-1 bg-blue-600 mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Strategic allocation of resources for maximum impact.</p>
+            </div>
+
+            <div class="bg-gray-50 p-8 rounded-xl shadow-sm">
+                <div class="grid md:grid-cols-5 gap-4 text-center">
+                    <div class="bg-blue-600 text-white p-4 rounded-lg">
+                        <div class="text-3xl font-bold mb-2">35%</div>
+                        <div class="text-sm">Manufacturing & Production Setup</div>
+                    </div>
+                    <div class="bg-blue-500 text-white p-4 rounded-lg">
+                        <div class="text-3xl font-bold mb-2">25%</div>
+                        <div class="text-sm">Research & Development</div>
+                    </div>
+                    <div class="bg-blue-400 text-white p-4 rounded-lg">
+                        <div class="text-3xl font-bold mb-2">20%</div>
+                        <div class="text-sm">Sales & Marketing</div>
+                    </div>
+                    <div class="bg-blue-300 text-gray-800 p-4 rounded-lg">
+                        <div class="text-3xl font-bold mb-2">12%</div>
+                        <div class="text-sm">Operations & Admin</div>
+                    </div>
+                    <div class="bg-blue-200 text-gray-800 p-4 rounded-lg">
+                        <div class="text-3xl font-bold mb-2">8%</div>
+                        <div class="text-sm">Human Resources</div>
+                    </div>
+                </div>
+
+                <div class="mt-8">
+                    <p class="text-gray-600">
+                        This strategic allocation ensures balanced investment across all critical business functions while prioritizing product development and manufacturing capabilities to maintain our competitive edge in quality and innovation.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Get In Touch</h2>
+                <div class="w-24 h-1 bg-blue-600 mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">We'd love to hear from you. Contact us for product inquiries or collaboration opportunities.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="bg-white p-8 rounded-xl shadow-sm">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Contact Information</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="text-blue-600 mr-4 mt-1">
+                                <i class="fas fa-user-tie text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">Vikram Jayantilal Oza</h4>
+                                <p class="text-gray-600">Director, SRNGA Scientific Private Limited</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="text-blue-600 mr-4 mt-1">
+                                <i class="fas fa-phone-alt text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">Phone</h4>
+                                <p class="text-gray-600">+91 99670 16573</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="text-blue-600 mr-4 mt-1">
+                                <i class="fas fa-envelope text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">Email</h4>
+                                <p class="text-gray-600">srngascientific@outlook.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="text-blue-600 mr-4 mt-1">
+                                <i class="fas fa-map-marker-alt text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">Address</h4>
+                                <p class="text-gray-600">29, 2nd floor, 59, Kakal Building<br>Dr. Sunderlal Bahl Marg, Goa Street<br>Ballard Estate, Fort, Mumbai - 400 001</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8">
+                        <h4 class="font-semibold text-gray-800 mb-4">Connect With Us</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center hover:bg-blue-600 hover:text-white transition duration-300">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center hover:bg-blue-600 hover:text-white transition duration-300">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center hover:bg-blue-600 hover:text-white transition duration-300">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center hover:bg-blue-600 hover:text-white transition duration-300">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-sm">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Send Us a Message</h3>
+                    
+                    <form id="contactForm" class="space-y-4">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                            <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" required>
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                            <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" required>
+                        </div>
+                        
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500">
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Your Message</label>
+                            <textarea id="message" name="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-md transition duration-300">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <img src="https://placehold.co/150x50?text=SRNGA+LOGO" alt="SRNGA Scientific Private Limited white logo" class="h-10 mb-4">
+                    <p class="text-gray-400">Innovating Digital Dentistry for a Brighter Smile.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition duration-300">Home</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition duration-300">About Us</a></li>
+                        <li><a href="#products" class="text-gray-400 hover:text-white transition duration-300">Products</a></li>
+                        <li><a href="#industry" class="text-gray-400 hover:text-white transition duration-300">Industry</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Products</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#products" class="text-gray-400 hover:text-white transition duration-300">Zirconia Discs</a></li>
+                        <li><a href="#products" class="text-gray-400 hover:text-white transition duration-300">CBCT Machines</a></li>
+                        <li><a href="#products" class="text-gray-400 hover:text-white transition duration-300">Tablets</a></li>
+                        <li><a href="#products" class="text-gray-400 hover:text-white transition duration-300">Turnkey Solutions</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Terms of Service</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400">© 2023 SRNGA Scientific Private Limited. All rights reserved.</p>
+                
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-linkedin-in text-lg"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-twitter text-lg"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-facebook-f text-lg"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-instagram text-lg"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-8 right-8 bg-blue-600 text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center hidden">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth Scrolling for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                mobileMenu.classList.add('hidden');
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    const offset = 80; // Adjust for fixed header
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Highlight Active Navigation Link
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if(pageYOffset >= (sectionTop - 150)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active-link');
+                if(link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active-link');
+                }
+            });
+        });
+
+        // Back to Top Button
+        const backToTopButton = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            if(window.pageYOffset > 300) {
+                backToTopButton.classList.remove('hidden');
+            } else {
+                backToTopButton.classList.add('hidden');
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Form Submission
+        const contactForm = document.getElementById('contactForm');
+        
+        if(contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Here you would normally send the form data to your server
+                // For this example, we'll just show a success message
+                alert('Thank you for your message! We will get back to you soon.');
+                this.reset();
+            });
+        }
+    </script>
+</body>
+</html>
